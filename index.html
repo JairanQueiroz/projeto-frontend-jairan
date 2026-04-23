@@ -114,8 +114,7 @@
 
         /* Hero Content Layout */
         .hero-section {
-            height: 120vh;
-            /* Altura mínima para permitir transição rápida em 1 scroll */
+            height: 100vh;
             position: relative;
         }
 
@@ -391,12 +390,22 @@
             }
 
             .stats-container {
-                display: none;
-                /* Hide stats on mobile or rearrange */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                width: 100%;
+                margin-top: 3rem;
+            }
+
+            .stat-card {
+                width: 100%;
+                max-width: 100% !important;
+                text-align: left;
             }
 
             #hero-video {
-                object-fit: contain;
+                object-fit: cover; /* Melhor cobrir no mobile se vamos dar fade */
             }
         }
     </style>
@@ -972,6 +981,19 @@
             },
             y: 200,
             opacity: 0.2
+        });
+
+        // Fade out video container on scroll
+        gsap.to("#video-container", {
+            scrollTrigger: {
+                trigger: ".hero-section",
+                start: "top top",
+                end: "60% top",
+                scrub: true,
+            },
+            opacity: 0,
+            y: -50,
+            filter: "blur(10px)"
         });
 
         // 5. Micro-interactions
