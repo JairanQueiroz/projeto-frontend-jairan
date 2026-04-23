@@ -880,30 +880,39 @@
         }
         requestAnimationFrame(raf);
 
+        // Sync ScrollTrigger with Lenis
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
         // 2. Video Scrubbing Logic
         const video = document.getElementById('hero-video');
 
         function initVideoScrub() {
             console.log('Initializing video scrub, duration:', video.duration);
             
-            // GSAP ScrollTrigger for Video
-            gsap.to(video, {
-                scrollTrigger: {
-                    trigger: ".hero-section",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1, // Smooth scrub
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        if (video.duration) {
-                            video.currentTime = progress * (video.duration - 0.1);
-                        }
+            // GSAP ScrollTrigger for Video - Using Create for better performance
+            ScrollTrigger.create({
+                trigger: ".hero-section",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                    if (video.duration) {
+                        // Manual seeking with requestAnimationFrame for smoothness
+                        const targetTime = self.progress * (video.duration - 0.05);
+                        video.currentTime = targetTime;
                     }
                 }
             });
 
             // Ensure video is visible
-            gsap.to(video, { opacity: 1, duration: 1.5, ease: "power2.out" });
+            gsap.to(video, { opacity: 1, duration: 1, ease: "power2.out" });
+            
+            // Refresh ScrollTrigger to ensure all positions are correct
+            ScrollTrigger.refresh();
         }
 
         // Handle load states
