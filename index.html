@@ -88,14 +88,14 @@
 
         /* Video Container */
         #video-container {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
             z-index: 0;
             overflow: hidden;
-            background: #000; /* Fundo preto caso o vídeo demore */
+            background: #000;
         }
 
         #hero-video {
@@ -404,18 +404,18 @@
 
 <body>
 
-    <!-- Video Element (Fixed) -->
-    <div id="video-container">
-        <video id="hero-video" preload="auto" muted playsinline webkit-playsinline autoplay loop>
-            <source src="raw_files/V%C3%ADdeo%2001.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-        <div class="absolute inset-0 grid-bg pointer-events-none"></div>
-    </div>
-
     <!-- Smooth Scroll Wrapper -->
     <div id="smooth-wrapper" style="position: relative; z-index: 10;">
         <div id="smooth-content">
+
+            <!-- Video Element (Inside smooth-content to scroll away) -->
+            <div id="video-container">
+                <video id="hero-video" preload="auto" muted playsinline webkit-playsinline autoplay loop>
+                    <source src="raw_files/V%C3%ADdeo%2001.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+                <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+            </div>
 
             <section class="hero-section">
                 <!-- Navigation -->
