@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homologação de Reboque & Renovação CCT INMETRO</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap"
+        rel="stylesheet">
+
     <!-- Iconify -->
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 
@@ -45,10 +48,22 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
 
         /* Typography from Design System */
         .display-h1 {
@@ -58,14 +73,14 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -0.05em;
-            text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
 
         /* Grid Pattern Background */
         .grid-bg {
             background-image:
-                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
             -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
@@ -87,18 +102,20 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.35) saturate(1.2);
-            opacity: 0; /* Animated in JS */
+            opacity: 0;
+            /* Animated in JS */
         }
 
         .overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, transparent 30%, rgba(5,5,5,0.8) 100%);
+            background: radial-gradient(circle at center, transparent 30%, rgba(5, 5, 5, 0.8) 100%);
         }
 
         /* Hero Content Layout */
         .hero-section {
-            height: 120vh; /* Altura mínima para permitir transição rápida em 1 scroll */
+            height: 120vh;
+            /* Altura mínima para permitir transição rápida em 1 scroll */
             position: relative;
         }
 
@@ -117,7 +134,7 @@
             position: relative;
             padding: 1rem 2.5rem;
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
             font-weight: 600;
             text-transform: uppercase;
@@ -152,7 +169,7 @@
         .stat-card {
             background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1.5rem;
             transition: all 0.5s ease;
         }
@@ -160,15 +177,15 @@
         .stat-card:hover {
             transform: translateY(-10px) scale(1.05);
             border-color: rgba(249, 115, 22, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         /* Glass Text Effect */
         .glass-tag {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.75rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -178,8 +195,10 @@
         }
 
         /* Motion Design Utils */
-        .char { display: inline-block; }
-        
+        .char {
+            display: inline-block;
+        }
+
         #scroll-hint {
             position: absolute;
             bottom: 2rem;
@@ -194,9 +213,22 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-            40% {transform: translateX(-50%) translateY(-10px);}
-            60% {transform: translateX(-50%) translateY(-5px);}
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
 
         .beam-line {
@@ -210,18 +242,108 @@
         }
 
         /* Beam Border Animations */
-        .beam-border-h { position:absolute; bottom:0; left:0; right:0; height:1px; background:rgba(255,255,255,0.05); overflow:hidden; }
-        .beam-border-h::after { content:''; position:absolute; inset:0; background:linear-gradient(to right, transparent, #F97316, transparent); transform:translateX(-100%); animation:beam-slide 7s cubic-bezier(0.4,0,0.2,1) infinite; animation-delay:2.5s; }
-        @keyframes beam-slide { 0%{transform:translateX(-100%);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateX(100%);opacity:0} }
+        .beam-border-h {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
 
-        .beam-border-v { position:absolute; top:0; bottom:0; left:0; width:1px; background:rgba(255,255,255,0.05); overflow:hidden; }
-        .beam-border-v::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent, #F97316, transparent); transform:translateY(-100%); animation:beam-drop 5s cubic-bezier(0.4,0,0.2,1) infinite; }
-        @keyframes beam-drop { 0%{transform:translateY(-100%);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(100%);opacity:0} }
+        .beam-border-h::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent, #F97316, transparent);
+            transform: translateX(-100%);
+            animation: beam-slide 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes beam-slide {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                transform: translateX(100%);
+                opacity: 0
+            }
+        }
+
+        .beam-border-v {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .beam-border-v::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, #F97316, transparent);
+            transform: translateY(-100%);
+            animation: beam-drop 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes beam-drop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            10% {
+                opacity: 1
+            }
+
+            90% {
+                opacity: 1
+            }
+
+            100% {
+                transform: translateY(100%);
+                opacity: 0
+            }
+        }
 
         /* Scroll Animations */
-        @keyframes fadeSlideIn { 0%{opacity:0;transform:translateY(30px);filter:blur(8px)} 100%{opacity:1;transform:translateY(0);filter:blur(0)} }
-        .animate-on-scroll { animation: fadeSlideIn 0.8s ease-out both; animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(8px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0)
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeSlideIn 0.8s ease-out both;
+            animation-play-state: paused !important;
+        }
+
+        .animate-on-scroll.animate {
+            animation-play-state: running !important;
+        }
 
         .btn-outlined {
             border: 1px solid #262626;
@@ -234,12 +356,16 @@
             transition: all 0.3s ease;
             position: relative;
         }
+
         .btn-outlined:hover {
             background-color: var(--primary);
             border-color: var(--primary);
             color: black;
         }
-        .btn-outlined:hover .btn-corner { opacity: 1; }
+
+        .btn-outlined:hover .btn-corner {
+            opacity: 1;
+        }
 
         .section-heading {
             font-size: clamp(2rem, 5vw, 4.5rem);
@@ -263,18 +389,21 @@
                 text-align: center;
                 padding-top: 5rem;
             }
+
             .stats-container {
-                display: none; /* Hide stats on mobile or rearrange */
+                display: none;
+                /* Hide stats on mobile or rearrange */
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Video Element (Fixed) -->
     <div id="video-container">
-        <video id="hero-video" preload="auto" muted playsinline>
-            <source src="raw_files/Vídeo 01.mp4" type="video/mp4">
+        <video id="hero-video" preload="auto" muted playsinline autoplay loop>
+            <source src="raw_files/V%C3%ADdeo%2001.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
         <div class="absolute inset-0 grid-bg pointer-events-none"></div>
@@ -283,38 +412,46 @@
     <!-- Smooth Scroll Wrapper -->
     <div id="smooth-wrapper">
         <div id="smooth-content">
-            
+
             <section class="hero-section">
                 <!-- Navigation -->
-                <nav class="fixed top-0 left-0 w-full z-[100] px-8 py-6 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
+                <nav
+                    class="fixed top-0 left-0 w-full z-[100] px-8 py-6 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
                     <div class="flex items-center gap-3">
                         <!-- Logo removido conforme solicitado -->
                     </div>
-                    <div class="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400">
+                    <div
+                        class="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400">
                         <a href="#contato" class="hover:text-orange-500 transition-colors">Contato</a>
                     </div>
                 </nav>
 
                 <div class="hero-fixed-content max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
+
                     <!-- Left: Lettering & CTAs -->
                     <div class="lg:col-span-7 flex flex-col justify-center items-start text-left">
                         <!-- Tag removida conforme solicitado -->
-                        
+
                         <h1 class="display-h1 mb-8" id="hero-title">
                             <span class="block text-white">HOMOLOGAÇÃO</span>
-                            <span class="text-orange-500 block" style="text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);">REBOQUE AUTOMOTIVO</span>
+                            <span class="text-orange-500 block"
+                                style="text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);">REBOQUE AUTOMOTIVO</span>
                             <span class="text-white block">& CCT INMETRO</span>
                         </h1>
 
-                        <p class="text-lg text-neutral-400 max-w-xl mb-12 leading-relaxed opacity-0 translate-y-10" id="hero-desc">
-                            Certificação de alto impacto para veículos especiais. Segurança garantida por especialistas em regulação técnica automotiva nacional.
+                        <p class="text-lg text-neutral-400 max-w-xl mb-12 leading-relaxed opacity-0 translate-y-10"
+                            id="hero-desc">
+                            Certificação de alto impacto para veículos especiais. Segurança garantida por especialistas
+                            em regulação técnica automotiva nacional.
                         </p>
 
                         <div class="flex flex-wrap gap-4 opacity-0 translate-y-10" id="hero-btns">
-                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-primary group">
-                                <div class="btn-corner top-0 left-0 border-t border-l -translate-x-2 -translate-y-2"></div>
-                                <div class="btn-corner bottom-0 right-0 border-b border-r translate-x-2 translate-y-2"></div>
+                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F"
+                                target="_blank" class="btn-primary group">
+                                <div class="btn-corner top-0 left-0 border-t border-l -translate-x-2 -translate-y-2">
+                                </div>
+                                <div class="btn-corner bottom-0 right-0 border-b border-r translate-x-2 translate-y-2">
+                                </div>
                                 Iniciar Processo
                             </a>
                         </div>
@@ -327,7 +464,9 @@
                             <div class="stat-card opacity-0 translate-x-20" id="stat-1">
                                 <div class="flex justify-between items-end mb-2">
                                     <span class="text-4xl font-bold text-white">100%</span>
-                                    <span class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest" style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">Aprovação</span>
+                                    <span
+                                        class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest"
+                                        style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">Aprovação</span>
                                 </div>
                                 <p class="text-xs text-neutral-300 uppercase tracking-widest leading-loose">
                                     Taxa de sucesso em auditorias de renovação CCT Inmetro.
@@ -338,7 +477,9 @@
                             <div class="stat-card opacity-0 translate-x-20" id="stat-2">
                                 <div class="flex justify-between items-end mb-2">
                                     <span class="text-4xl font-bold text-white">100%</span>
-                                    <span class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest" style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">APROVAÇÃO</span>
+                                    <span
+                                        class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest"
+                                        style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">APROVAÇÃO</span>
                                 </div>
                                 <p class="text-xs text-neutral-300 uppercase tracking-widest leading-loose">
                                     Análise técnica e conformidade documental acelerada.
@@ -349,7 +490,9 @@
                             <div class="stat-card opacity-0 translate-x-20" id="stat-3">
                                 <div class="flex justify-between items-end mb-2">
                                     <span class="text-4xl font-bold text-white">CAT</span>
-                                    <span class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest" style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">Homologação</span>
+                                    <span
+                                        class="text-[13px] font-bold font-mono text-orange-500 uppercase tracking-widest"
+                                        style="text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);">Homologação</span>
                                 </div>
                                 <p class="text-xs text-neutral-300 uppercase tracking-widest leading-loose">
                                     Gestão completa de Certificado de Adequação ao Trânsito.
@@ -361,7 +504,8 @@
 
                 <!-- Scroll Hint -->
                 <div id="scroll-hint">
-                    <span class="text-[9px] uppercase font-mono tracking-[0.4em] text-white/40">Scroll para interagir</span>
+                    <span class="text-[9px] uppercase font-mono tracking-[0.4em] text-white/40">Scroll para
+                        interagir</span>
                     <div class="w-[1px] h-12 bg-gradient-to-b from-orange-500 to-transparent"></div>
                 </div>
             </section>
@@ -369,26 +513,30 @@
             <!-- SECTION 1: COMO FUNCIONA -->
             <section id="como-funciona" class="relative z-20 py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
                 <div class="max-w-[1440px] mx-auto">
-                    <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">PROCESSO</span>
+                    <span
+                        class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">PROCESSO</span>
                     <h2 class="section-heading mb-20 animate-on-scroll">Como funciona</h2>
-                    
+
                     <!-- PROCESSO 01: HOMOLOGAÇÃO -->
                     <div class="mb-32">
                         <div class="flex items-center gap-4 mb-12 animate-on-scroll">
                             <div class="h-[1px] w-12 bg-orange-500"></div>
                             <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">Homologação</h3>
                         </div>
-                        
+
                         <div class="relative grid grid-cols-1 md:grid-cols-5 gap-12 lg:gap-8">
                             <!-- Desktop Dash Line -->
-                            <div class="hidden md:block absolute top-[25px] left-[5%] right-[5%] h-[1px] border-t border-dashed border-orange-500/20 -z-10"></div>
-                            
+                            <div
+                                class="hidden md:block absolute top-[25px] left-[5%] right-[5%] h-[1px] border-t border-dashed border-orange-500/20 -z-10">
+                            </div>
+
                             <!-- Step 1 -->
                             <div class="flex flex-col gap-6 animate-on-scroll" style="animation-delay: 0.1s;">
                                 <span class="text-3xl font-mono text-orange-500 font-bold">01</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Diagnóstico</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Análise da situação documental e técnica da sua empresa fabricante de reboque.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Análise da situação
+                                        documental e técnica da sua empresa fabricante de reboque.</p>
                                 </div>
                             </div>
 
@@ -397,7 +545,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">02</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Documentação</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Organização dos requisitos iniciais exigidos pelo INMETRO.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Organização dos
+                                        requisitos iniciais exigidos pelo INMETRO.</p>
                                 </div>
                             </div>
 
@@ -406,7 +555,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">03</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Projeto técnico</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Elaboração do memorial descritivo, desenhos e licença IBAMA.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Elaboração do
+                                        memorial descritivo, desenhos e licença IBAMA.</p>
                                 </div>
                             </div>
 
@@ -415,7 +565,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">04</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Ensaios</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Realização dos ensaios aplicáveis no protótipo — sinalização e freios.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Realização dos
+                                        ensaios aplicáveis no protótipo — sinalização e freios.</p>
                                 </div>
                             </div>
 
@@ -424,7 +575,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">05</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Protocolo / Aprovação</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Submissão ao DENATRAN (CAT) e INMETRO (CCT). Prazo médio de 60 dias.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Submissão ao DENATRAN
+                                        (CAT) e INMETRO (CCT). Prazo médio de 60 dias.</p>
                                 </div>
                             </div>
                         </div>
@@ -434,19 +586,23 @@
                     <div class="pt-20 border-t border-white/5">
                         <div class="flex items-center gap-4 mb-12 animate-on-scroll">
                             <div class="h-[1px] w-12 bg-orange-500"></div>
-                            <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">Renovação do CCT INMETRO</h3>
+                            <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">Renovação do CCT
+                                INMETRO</h3>
                         </div>
-                        
+
                         <div class="relative grid grid-cols-1 md:grid-cols-5 gap-12 lg:gap-8">
                             <!-- Desktop Dash Line -->
-                            <div class="hidden md:block absolute top-[25px] left-[5%] right-[5%] h-[1px] border-t border-dashed border-orange-500/20 -z-10"></div>
-                            
+                            <div
+                                class="hidden md:block absolute top-[25px] left-[5%] right-[5%] h-[1px] border-t border-dashed border-orange-500/20 -z-10">
+                            </div>
+
                             <!-- Step 1 -->
                             <div class="flex flex-col gap-6 animate-on-scroll" style="animation-delay: 0.1s;">
                                 <span class="text-3xl font-mono text-orange-500 font-bold">01</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Verificação do prazo</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Checagem da validade do CCT vigente e alterações na legislação.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Checagem da validade
+                                        do CCT vigente e alterações na legislação.</p>
                                 </div>
                             </div>
 
@@ -455,7 +611,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">02</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Atualização documental</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Revisão dos procedimentos administrativos e de qualidade.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Revisão dos
+                                        procedimentos administrativos e de qualidade.</p>
                                 </div>
                             </div>
 
@@ -464,7 +621,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">03</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Inspeção técnica</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Visita técnica à fábrica para verificação da conformidade.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Visita técnica à
+                                        fábrica para verificação da conformidade.</p>
                                 </div>
                             </div>
 
@@ -473,7 +631,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">04</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Ensaios</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Novos ensaios podem ser exigidos caso haja alteração normativa.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Novos ensaios podem
+                                        ser exigidos caso haja alteração normativa.</p>
                                 </div>
                             </div>
 
@@ -482,7 +641,8 @@
                                 <span class="text-3xl font-mono text-orange-500 font-bold">05</span>
                                 <div class="space-y-3">
                                     <h4 class="text-lg font-bold text-white">Emissão do novo CCT</h4>
-                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Protocolo junto ao INMETRO e entrega do novo Comprovante.</p>
+                                    <p class="text-sm text-neutral-400 font-light leading-relaxed">Protocolo junto ao
+                                        INMETRO e entrega do novo Comprovante.</p>
                                 </div>
                             </div>
                         </div>
@@ -496,34 +656,48 @@
             <section id="servicos" class="relative z-20 py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
                 <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
                 <div class="max-w-[1440px] mx-auto relative z-10">
-                    <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">SERVIÇOS</span>
-                    <h2 class="section-heading mb-20 animate-on-scroll" style="animation-delay: 0.1s;">O que oferecemos</h2>
-                    
+                    <span
+                        class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">SERVIÇOS</span>
+                    <h2 class="section-heading mb-20 animate-on-scroll" style="animation-delay: 0.1s;">O que oferecemos
+                    </h2>
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Card 1 -->
-                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll"
+                            style="animation-delay: 0.2s;">
                             <div class="beam-border-v"></div>
-                            <span class="iconify text-5xl text-orange-500" data-icon="solar:shield-check-bold-duotone"></span>
+                            <span class="iconify text-5xl text-orange-500"
+                                data-icon="solar:shield-check-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Responsabilidade Técnica (RT)</h3>
-                            <p class="text-neutral-400 font-light leading-relaxed">Vinculamos sua empresa ao CREA com engenheiro responsável devidamente registrado, garantindo conformidade com os órgãos reguladores.</p>
+                            <p class="text-neutral-400 font-light leading-relaxed">Vinculamos sua empresa ao CREA com
+                                engenheiro responsável devidamente registrado, garantindo conformidade com os órgãos
+                                reguladores.</p>
 
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll"
+                            style="animation-delay: 0.3s;">
                             <div class="beam-border-v"></div>
-                            <span class="iconify text-5xl text-orange-500" data-icon="solar:document-text-bold-duotone"></span>
+                            <span class="iconify text-5xl text-orange-500"
+                                data-icon="solar:document-text-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Emissão de ART</h3>
-                            <p class="text-neutral-400 font-light leading-relaxed">Emitimos a Anotação de Responsabilidade Técnica necessária para cada empresa, assegurando cobertura legal em todas as atividades de reboque.</p>
+                            <p class="text-neutral-400 font-light leading-relaxed">Emitimos a Anotação de
+                                Responsabilidade Técnica necessária para cada empresa, assegurando cobertura legal em
+                                todas as atividades de reboque.</p>
 
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="service-card group bg-[#0A0A0A] border border-white/5 p-10 flex flex-col gap-8 transition-all duration-300 relative animate-on-scroll"
+                            style="animation-delay: 0.4s;">
                             <div class="beam-border-v"></div>
-                            <span class="iconify text-5xl text-orange-500" data-icon="solar:verified-check-bold-duotone"></span>
+                            <span class="iconify text-5xl text-orange-500"
+                                data-icon="solar:verified-check-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Homologação & Renovação CCT</h3>
-                            <p class="text-neutral-400 font-light leading-relaxed">Em parceria com a VIP, conduzimos todo o processo de homologação ou renovação do Certificado de Conformidade de Tráfego junto ao INMETRO.</p>
+                            <p class="text-neutral-400 font-light leading-relaxed">Em parceria com a VIP, conduzimos
+                                todo o processo de homologação ou renovação do Certificado de Conformidade de Tráfego
+                                junto ao INMETRO.</p>
 
                         </div>
                     </div>
@@ -536,32 +710,48 @@
                 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-7 border-x border-white/5">
                     <!-- Left -->
                     <div class="lg:col-span-4 p-12 lg:p-24 border-r border-white/5 flex flex-col justify-center">
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">NOSSA PARCERIA</span>
-                        <h2 class="section-heading mb-8 animate-on-scroll" style="animation-delay: 0.1s;">VIP + RT:<br>solução completa</h2>
-                        <p class="text-lg text-neutral-400 font-light leading-relaxed mb-12 animate-on-scroll" style="animation-delay: 0.2s;">
-                            A VIP gerencia toda a parte operacional e de inspeção, enquanto o engenheiro fornece a cobertura legal via CREA. Juntos, entregamos conformidade ponta a ponta para seu CCT.
+                        <span
+                            class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">NOSSA
+                            PARCERIA</span>
+                        <h2 class="section-heading mb-8 animate-on-scroll" style="animation-delay: 0.1s;">VIP +
+                            RT:<br>solução completa</h2>
+                        <p class="text-lg text-neutral-400 font-light leading-relaxed mb-12 animate-on-scroll"
+                            style="animation-delay: 0.2s;">
+                            A VIP gerencia toda a parte operacional e de inspeção, enquanto o engenheiro fornece a
+                            cobertura legal via CREA. Juntos, entregamos conformidade ponta a ponta para seu CCT.
                         </p>
                         <div class="animate-on-scroll" style="animation-delay: 0.3s;">
-                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-outlined group inline-block">
-                                <div class="btn-corner absolute top-0 left-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity"></div>
-                                <div class="btn-corner absolute bottom-0 right-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity"></div>
+                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F"
+                                target="_blank" class="btn-outlined group inline-block">
+                                <div
+                                    class="btn-corner absolute top-0 left-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity">
+                                </div>
+                                <div
+                                    class="btn-corner absolute bottom-0 right-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity">
+                                </div>
                                 Saiba mais
                             </a>
                         </div>
                     </div>
                     <!-- Right Stats -->
                     <div class="lg:col-span-3 flex flex-col divide-y divide-white/5">
-                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll"
+                            style="animation-delay: 0.2s;">
                             <span class="text-6xl font-medium text-white tracking-tighter">2590</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Empresas com documentação aprovada</span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Empresas com
+                                documentação aprovada</span>
                         </div>
-                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll"
+                            style="animation-delay: 0.3s;">
                             <span class="text-6xl font-medium text-white tracking-tighter">100%</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Taxa de Aprovação INMETRO</span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Taxa de Aprovação
+                                INMETRO</span>
                         </div>
-                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll"
+                            style="animation-delay: 0.4s;">
                             <span class="text-6xl font-medium text-white tracking-tighter">ART</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Emitida para cada contrato</span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Emitida para cada
+                                contrato</span>
                         </div>
                     </div>
                 </div>
@@ -572,8 +762,10 @@
                 <div class="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
                 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
                     <div>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">CONFORMIDADE</span>
-                        <h2 class="section-heading mb-12 animate-on-scroll" style="animation-delay: 0.1s;">Por que regularizar sua empresa?</h2>
+                        <span
+                            class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-6 block animate-on-scroll">CONFORMIDADE</span>
+                        <h2 class="section-heading mb-12 animate-on-scroll" style="animation-delay: 0.1s;">Por que
+                            regularizar sua empresa?</h2>
                         <ul class="space-y-6 animate-on-scroll" style="animation-delay: 0.2s;">
                             <li class="flex gap-4 items-start text-lg text-neutral-300">
                                 <span class="text-orange-500 font-bold">—</span>
@@ -596,28 +788,37 @@
                     <div class="animate-on-scroll" style="animation-delay: 0.4s;">
                         <div class="bg-[#0A0A0A] border border-white/5 p-12 relative overflow-hidden">
                             <div class="beam-border-h top-0"></div>
-                            <span class="text-orange-500 text-6xl font-serif absolute -top-4 -left-2 opacity-20">"</span>
+                            <span
+                                class="text-orange-500 text-6xl font-serif absolute -top-4 -left-2 opacity-20">"</span>
                             <blockquote class="text-2xl font-medium leading-relaxed text-white relative z-10 mb-8">
-                                Sem o CCT INMETRO e a ART em dia, sua empresa de reboque não pode operar legalmente no Brasil.
+                                Sem o CCT INMETRO e a ART em dia, sua empresa de reboque não pode operar legalmente no
+                                Brasil.
                             </blockquote>
-                            <cite class="not-italic text-sm font-mono uppercase tracking-widest text-neutral-600">— Resolução CONTRAN / INMETRO nº 937/2022</cite>
+                            <cite class="not-italic text-sm font-mono uppercase tracking-widest text-neutral-600">—
+                                Resolução CONTRAN / INMETRO nº 937/2022</cite>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- SECTION 5: CONTACT -->
-            <section id="contato" class="relative z-20 py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden border-t border-white/5">
+            <section id="contato"
+                class="relative z-20 py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden border-t border-white/5">
                 <div class="beam-border-h top-0"></div>
                 <div class="max-w-[800px] mx-auto text-center">
                     <h2 class="section-heading mb-8 animate-on-scroll">Pronto para regularizar?</h2>
-                    <p class="text-xl text-neutral-400 font-light mb-12 animate-on-scroll" style="animation-delay: 0.1s;">
-                        Entre em contato e veja como iniciar o processo de homologação ou renovação do CCT INMETRO da sua empresa.
+                    <p class="text-xl text-neutral-400 font-light mb-12 animate-on-scroll"
+                        style="animation-delay: 0.1s;">
+                        Entre em contato e veja como iniciar o processo de homologação ou renovação do CCT INMETRO da
+                        sua empresa.
                     </p>
-                    <div class="flex flex-wrap justify-center gap-6 mb-20 animate-on-scroll" style="animation-delay: 0.2s;">
-                        <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-primary">Iniciar Processo</a>
+                    <div class="flex flex-wrap justify-center gap-6 mb-20 animate-on-scroll"
+                        style="animation-delay: 0.2s;">
+                        <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F"
+                            target="_blank" class="btn-primary">Iniciar Processo</a>
                     </div>
-                    <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-600 animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-600 animate-on-scroll"
+                        style="animation-delay: 0.3s;">
                         <span>✓ Engenheiro registrado no CREA</span>
                         <span>✓ Parceria com VIP homologadora</span>
                         <span>✓ ART emitida em cada contrato</span>
@@ -627,22 +828,25 @@
 
             <!-- FOOTER -->
             <footer class="relative z-20 py-20 px-6 lg:px-12 bg-[#030303] border-t border-white/5">
-                <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+                <div
+                    class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
                     <div class="space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-4 h-4 bg-orange-500"></div>
                             <span class="font-mono text-white tracking-widest uppercase">RT & CCT</span>
                         </div>
-                        <p class="text-xs text-neutral-600 uppercase tracking-widest">Responsabilidade Técnica & CCT INMETRO</p>
+                        <p class="text-xs text-neutral-600 uppercase tracking-widest">Responsabilidade Técnica & CCT
+                            INMETRO</p>
                     </div>
-                    
-                    <nav class="flex flex-wrap gap-x-12 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-neutral-500">
+
+                    <nav
+                        class="flex flex-wrap gap-x-12 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-neutral-500">
                         <a href="#servicos" class="hover:text-orange-500 transition-colors">Serviços</a>
                         <a href="#como-funciona" class="hover:text-orange-500 transition-colors">Processo</a>
                         <a href="#parceria" class="hover:text-orange-500 transition-colors">Parceria</a>
                         <a href="#contato" class="hover:text-orange-500 transition-colors">Contato</a>
                     </nav>
-                    
+
                     <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-700">
                         © 2025 — Todos os direitos reservados
                     </span>
@@ -678,10 +882,9 @@
 
         // 2. Video Scrubbing Logic
         const video = document.getElementById('hero-video');
-        
-        // Wait for metadata to know the duration
-        video.onloadedmetadata = () => {
-            console.log('Video duration:', video.duration);
+
+        function initVideoScrub() {
+            console.log('Initializing video scrub, duration:', video.duration);
             
             // GSAP ScrollTrigger for Video
             gsap.to(video, {
@@ -691,32 +894,45 @@
                     end: "bottom bottom",
                     scrub: 1, // Smooth scrub
                     onUpdate: (self) => {
-                        // Manual scrubbing for precision
                         const progress = self.progress;
-                        const targetTime = progress * (video.duration - 0.1); 
-                        video.currentTime = targetTime;
+                        if (video.duration) {
+                            video.currentTime = progress * (video.duration - 0.1);
+                        }
                     }
                 }
             });
 
-            // Appear animation for video
-            gsap.to(video, { opacity: 1, duration: 2, ease: "power2.out" });
-        };
+            // Ensure video is visible
+            gsap.to(video, { opacity: 1, duration: 1.5, ease: "power2.out" });
+        }
+
+        // Handle load states
+        if (video.readyState >= 1) {
+            initVideoScrub();
+        } else {
+            video.addEventListener('loadedmetadata', initVideoScrub);
+            // Fallback for mobile if metadata event is blocked/delayed
+            setTimeout(() => {
+                if (video.style.opacity === "0" || video.style.opacity === "") {
+                    gsap.to(video, { opacity: 1, duration: 1.5 });
+                }
+            }, 2000);
+        }
 
         // 3. Entrance Animations
         const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.5 } });
 
-        tl.from("#hero-title span", { 
-              y: 100, 
-              opacity: 0, 
-              stagger: 0.1, 
-              filter: "blur(10px)",
-          }, "+=0.5")
-          .to("#hero-desc", { opacity: 1, y: 0 }, "-=1.2")
-          .to("#hero-btns", { opacity: 1, y: 0 }, "-=1.2")
-          .to("#stat-1", { opacity: 1, x: 0 }, "-=1.4")
-          .to("#stat-2", { opacity: 1, x: 0 }, "-=1.3")
-          .to("#stat-3", { opacity: 1, x: 0 }, "-=1.2");
+        tl.from("#hero-title span", {
+            y: 100,
+            opacity: 0,
+            stagger: 0.1,
+            filter: "blur(10px)",
+        }, "+=0.5")
+            .to("#hero-desc", { opacity: 1, y: 0 }, "-=1.2")
+            .to("#hero-btns", { opacity: 1, y: 0 }, "-=1.2")
+            .to("#stat-1", { opacity: 1, x: 0 }, "-=1.4")
+            .to("#stat-2", { opacity: 1, x: 0 }, "-=1.3")
+            .to("#stat-3", { opacity: 1, x: 0 }, "-=1.2");
 
         // 4. Parallax and Dissolve effects on Scroll
         // Titles dissolve and move up
@@ -750,7 +966,7 @@
         window.addEventListener('mousemove', (e) => {
             const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
             const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
-            
+
             gsap.to(video, {
                 x: x * 20,
                 y: y * 20,
@@ -777,4 +993,5 @@
 
     </script>
 </body>
+
 </html>
