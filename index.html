@@ -53,11 +53,12 @@
         /* Typography from Design System */
         .display-h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 8vw, 7.5rem);
+            font-size: clamp(2.4rem, 6.4vw, 6rem);
             line-height: 0.9;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -0.05em;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.8);
         }
 
         /* Grid Pattern Background */
@@ -85,7 +86,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.6) saturate(1.2);
+            filter: brightness(0.35) saturate(1.2);
             opacity: 0; /* Animated in JS */
         }
 
@@ -301,9 +302,9 @@
                         <!-- Tag removida conforme solicitado -->
                         
                         <h1 class="display-h1 mb-8" id="hero-title">
-                            <span class="block text-white">REBOQUE</span>
-                            <span class="text-neutral-500 block">AUTOMOTIVO</span>
-                            <span class="text-neutral-200">& CCT INMETRO</span>
+                            <span class="block text-white">HOMOLOGAÇÃO</span>
+                            <span class="text-orange-500 block" style="text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);">REBOQUE AUTOMOTIVO</span>
+                            <span class="text-white block">& CCT INMETRO</span>
                         </h1>
 
                         <p class="text-lg text-neutral-400 max-w-xl mb-12 leading-relaxed opacity-0 translate-y-10" id="hero-desc">
@@ -311,7 +312,7 @@
                         </p>
 
                         <div class="flex flex-wrap gap-4 opacity-0 translate-y-10" id="hero-btns">
-                            <a href="https://wa.me/5511949548785" target="_blank" class="btn-primary group">
+                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-primary group">
                                 <div class="btn-corner top-0 left-0 border-t border-l -translate-x-2 -translate-y-2"></div>
                                 <div class="btn-corner bottom-0 right-0 border-b border-r translate-x-2 translate-y-2"></div>
                                 Iniciar Processo
@@ -505,7 +506,7 @@
                             <span class="iconify text-5xl text-orange-500" data-icon="solar:shield-check-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Responsabilidade Técnica (RT)</h3>
                             <p class="text-neutral-400 font-light leading-relaxed">Vinculamos sua empresa ao CREA com engenheiro responsável devidamente registrado, garantindo conformidade com os órgãos reguladores.</p>
-                            <a href="#" class="mt-auto text-orange-500 text-sm font-mono uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all">Saiba mais →</a>
+
                         </div>
 
                         <!-- Card 2 -->
@@ -514,7 +515,7 @@
                             <span class="iconify text-5xl text-orange-500" data-icon="solar:document-text-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Emissão de ART</h3>
                             <p class="text-neutral-400 font-light leading-relaxed">Emitimos a Anotação de Responsabilidade Técnica necessária para cada empresa, assegurando cobertura legal em todas as atividades de reboque.</p>
-                            <a href="#" class="mt-auto text-orange-500 text-sm font-mono uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all">Saiba mais →</a>
+
                         </div>
 
                         <!-- Card 3 -->
@@ -523,7 +524,7 @@
                             <span class="iconify text-5xl text-orange-500" data-icon="solar:verified-check-bold-duotone"></span>
                             <h3 class="text-2xl font-bold text-white">Homologação & Renovação CCT</h3>
                             <p class="text-neutral-400 font-light leading-relaxed">Em parceria com a VIP, conduzimos todo o processo de homologação ou renovação do Certificado de Conformidade de Tráfego junto ao INMETRO.</p>
-                            <a href="#" class="mt-auto text-orange-500 text-sm font-mono uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all">Saiba mais →</a>
+
                         </div>
                     </div>
                 </div>
@@ -541,18 +542,18 @@
                             A VIP gerencia toda a parte operacional e de inspeção, enquanto o engenheiro fornece a cobertura legal via CREA. Juntos, entregamos conformidade ponta a ponta para seu CCT.
                         </p>
                         <div class="animate-on-scroll" style="animation-delay: 0.3s;">
-                            <a href="#" class="btn-outlined group inline-block">
+                            <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-outlined group inline-block">
                                 <div class="btn-corner absolute top-0 left-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity"></div>
                                 <div class="btn-corner absolute bottom-0 right-0 w-1 h-1 bg-orange-500 opacity-0 transition-opacity"></div>
-                                Entender mais
+                                Saiba mais
                             </a>
                         </div>
                     </div>
                     <!-- Right Stats -->
                     <div class="lg:col-span-3 flex flex-col divide-y divide-white/5">
                         <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll" style="animation-delay: 0.2s;">
-                            <span class="text-6xl font-medium text-white tracking-tighter">3</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Empresas com RT Ativo</span>
+                            <span class="text-6xl font-medium text-white tracking-tighter">2590</span>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Empresas com documentação aprovada</span>
                         </div>
                         <div class="bg-[#0A0A0A] border-l-4 border-orange-500 p-12 lg:p-16 flex flex-col gap-4 animate-on-scroll" style="animation-delay: 0.3s;">
                             <span class="text-6xl font-medium text-white tracking-tighter">100%</span>
@@ -599,7 +600,7 @@
                             <blockquote class="text-2xl font-medium leading-relaxed text-white relative z-10 mb-8">
                                 Sem o CCT INMETRO e a ART em dia, sua empresa de reboque não pode operar legalmente no Brasil.
                             </blockquote>
-                            <cite class="not-italic text-sm font-mono uppercase tracking-widest text-neutral-600">— Resolução CONTRAN / INMETRO</cite>
+                            <cite class="not-italic text-sm font-mono uppercase tracking-widest text-neutral-600">— Resolução CONTRAN / INMETRO nº 937/2022</cite>
                         </div>
                     </div>
                 </div>
@@ -614,7 +615,7 @@
                         Entre em contato e veja como iniciar o processo de homologação ou renovação do CCT INMETRO da sua empresa.
                     </p>
                     <div class="flex flex-wrap justify-center gap-6 mb-20 animate-on-scroll" style="animation-delay: 0.2s;">
-                        <a href="https://wa.me/5511949548785" target="_blank" class="btn-primary">Iniciar Processo</a>
+                        <a href="https://wa.me/5511949548785?text=Ol%C3%A1!%20Quero%20regularizar%20minha%20empresa%20e%20entender%20melhor%20os%20servi%C3%A7os.%20Pode%20me%20orientar%3F" target="_blank" class="btn-primary">Iniciar Processo</a>
                     </div>
                     <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-600 animate-on-scroll" style="animation-delay: 0.3s;">
                         <span>✓ Engenheiro registrado no CREA</span>
