@@ -416,10 +416,23 @@
             .stat-card {
                 width: 100%;
                 max-width: 100% !important;
-                padding: 1.5rem;
+                padding: 1rem; /* Reduzido de 1.5rem */
                 transform: none !important;
                 opacity: 1 !important;
                 background: rgba(15, 15, 15, 0.8);
+            }
+
+            .stat-card span.text-4xl {
+                font-size: 1.5rem !important; /* Números menores no mobile */
+            }
+
+            .stat-card span.text-\[13px\] {
+                font-size: 10px !important; /* Labels menores */
+            }
+
+            .stat-card p.text-xs {
+                font-size: 10px !important; /* Descrições menores */
+                line-height: 1.4;
             }
 
             section {
