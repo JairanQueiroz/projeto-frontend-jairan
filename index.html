@@ -93,8 +93,9 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            z-index: -1;
+            z-index: 0;
             overflow: hidden;
+            background: #000; /* Fundo preto caso o vídeo demore */
         }
 
         #hero-video {
@@ -102,8 +103,7 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.35) saturate(1.2);
-            opacity: 0;
-            /* Animated in JS */
+            opacity: 1;
         }
 
         .overlay {
@@ -402,7 +402,7 @@
 
     <!-- Video Element (Fixed) -->
     <div id="video-container">
-        <video id="hero-video" preload="auto" muted playsinline autoplay loop>
+        <video id="hero-video" preload="auto" muted playsinline webkit-playsinline autoplay loop>
             <source src="raw_files/V%C3%ADdeo%2001.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
@@ -410,7 +410,7 @@
     </div>
 
     <!-- Smooth Scroll Wrapper -->
-    <div id="smooth-wrapper">
+    <div id="smooth-wrapper" style="position: relative; z-index: 10;">
         <div id="smooth-content">
 
             <section class="hero-section">
