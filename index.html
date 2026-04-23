@@ -382,30 +382,48 @@
 
         /* Mobile Adjustments */
         @media (max-width: 1024px) {
+            .hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding-bottom: 5rem;
+            }
+
             .hero-fixed-content {
+                position: relative;
+                height: auto;
+                min-height: 100vh;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 text-align: center;
-                padding-top: 5rem;
+                padding-top: 8rem;
+                padding-bottom: 3rem;
             }
 
             .stats-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 1.5rem;
+                gap: 1rem;
                 width: 100%;
-                margin-top: 3rem;
+                margin-top: 2rem;
+                opacity: 1 !important; /* Forçar visibilidade se necessário */
             }
 
             .stat-card {
                 width: 100%;
                 max-width: 100% !important;
-                text-align: left;
+                padding: 1rem;
+                transform: none !important; /* Remover transformações que podem tirar do scroll */
+                opacity: 1 !important;
+            }
+
+            section {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
             }
 
             #hero-video {
-                object-fit: cover; /* Melhor cobrir no mobile se vamos dar fade */
+                object-fit: cover;
             }
         }
     </style>
